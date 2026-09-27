@@ -157,7 +157,7 @@ cd software/firmware
 pio test -e native   # host unit tests, no hardware needed
 ```
 
-CI runs the same tests on every pull request that touches `software/firmware/`.
+CI runs the same tests on every pull request.
 Add commands here as they are introduced (building and flashing the ESP32
 once the board is chosen, the ROS 2 workspace in Stage 2).
 

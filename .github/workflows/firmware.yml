@@ -1,15 +1,11 @@
 name: firmware
 
+# Runs on every pull request, not only firmware changes, so that the job can
+# be a required status check for main.
 on:
   push:
     branches: [main]
-    paths:
-      - "software/firmware/**"
-      - ".github/workflows/firmware.yml"
   pull_request:
-    paths:
-      - "software/firmware/**"
-      - ".github/workflows/firmware.yml"
 
 permissions:
   contents: read
