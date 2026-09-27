@@ -12,20 +12,23 @@ robot, built up in stages. The long-term goals are ROS 2, camera-based
 perception with neural networks, SLAM with LiDAR or similar sensors,
 autonomous driving, and natural-language interaction through an LLM.
 
-The repository currently holds design documents only. No firmware or ROS 2
-code has been written yet.
+Stage 1 is in progress. The firmware so far is hardware-independent control
+logic with host unit tests; board-specific code follows once the parts are
+chosen. No ROS 2 code has been written yet.
 
 - `docs/architecture.md`: decisions that are settled, with rationale.
 - `docs/open-questions.md`: decisions that are deliberately still open.
+- `firmware/`: the ESP32 body, a PlatformIO project.
 
-Directories such as `firmware/`, `ros2/` and `hardware/` are created when real
-work on them starts. Do not add empty directories or placeholder files.
+Directories such as `ros2/` and `hardware/` are created when real work on them
+starts. Do not add empty directories or placeholder files.
 
 ## Architecture
 
 The robot is split into a brain and a body.
 
-- **Body**: an ESP32, programmed with the Arduino framework. It owns motor
+- **Body**: an ESP32, programmed with the Arduino framework and built with
+  PlatformIO. It owns motor
   control (PID), encoders, sensors, battery monitoring and the safety stop.
   It must run on its own, without a brain.
 - **Brain**: for now a Mac running ROS 2 in Docker. The target is an old
@@ -103,6 +106,9 @@ command timeout, without an explicit decision from the maintainer.
   loop.
 - Stop the motors when commands stop arriving.
 - Read encoders with interrupts or a hardware pulse counter.
+- Keep hardware-independent logic (kinematics, PID, timeouts, message
+  parsing) in `firmware/lib/` without Arduino dependencies, and cover it with
+  host unit tests in `firmware/test/`.
 - Put Wi-Fi passwords and other secrets in `secrets.h` (ignored by Git).
   Commit only `secrets.example.h`.
 
@@ -143,10 +149,17 @@ command timeout, without an explicit decision from the maintainer.
 
 ## Commands
 
-There is no code yet, so there are no build, flash or test commands.
-Add them here stage by stage as they are introduced (for example, how to
-build and flash the firmware in Stage 1, and how to build and run the ROS 2
-workspace in Stage 2).
+Firmware (requires PlatformIO Core, for example through the VS Code
+extension):
+
+```sh
+cd firmware
+pio test -e native   # host unit tests, no hardware needed
+```
+
+CI runs the same tests on every pull request that touches `firmware/`.
+Add commands here as they are introduced (building and flashing the ESP32
+once the board is chosen, the ROS 2 workspace in Stage 2).
 
 ## Language
 
