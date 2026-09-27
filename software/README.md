@@ -24,6 +24,9 @@ The firmware and the brain talk only through the brain–body contract in
 - The body reports motion as cumulative totals, plus sensor data.
 - The body stops the motors by itself when commands stop arriving.
 
+The exact messages are specified in [docs/protocol.md](../docs/protocol.md).
+Every implementation, on the body or the brain, follows that file.
+
 Do not add shortcuts around the contract, even for testing. It is what lets
 the brain be replaced without touching the firmware.
 
