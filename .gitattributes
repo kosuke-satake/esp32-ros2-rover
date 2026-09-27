@@ -6,3 +6,24 @@
 *.gif binary
 *.webp binary
 *.pdf binary
+
+# CAD and fabrication files: keep the bytes exactly as exported.
+# Upper-case variants are listed because some CAD tools write them.
+*.step binary
+*.STEP binary
+*.stp binary
+*.STP binary
+*.stl binary
+*.STL binary
+*.3mf binary
+*.dxf binary
+*.DXF binary
+*.sldprt binary
+*.SLDPRT binary
+*.sldasm binary
+*.SLDASM binary
+*.slddrw binary
+*.SLDDRW binary
+*.ipt binary
+*.iam binary
+*.idw binary
