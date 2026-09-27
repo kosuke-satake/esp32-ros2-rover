@@ -194,6 +194,8 @@ once the board is chosen, the ROS 2 workspace in Stage 2).
   imperative sentence in English. For important changes, explain why in the
   body. Avoid boilerplate or generic wording.
 - Open a pull request for review. Do not merge it yourself.
+- `hardware/member-*` branches are personal branches of team members. Do not
+  commit to them unless the maintainer asks.
 - Never commit secrets (passwords, API keys, tokens), `.DS_Store`, build
   output, caches, `.label.toml`, or conversation logs and personal notes.
 

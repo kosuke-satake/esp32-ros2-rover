@@ -30,6 +30,9 @@ GitHub asks them to review changes to their folders.
 
 ## Making a change
 
+This is the usual workflow. Hardware members who are new to Git use a
+personal branch instead; see the next section.
+
 1. Start from the latest `main`:
    ```sh
    git switch main
@@ -50,6 +53,48 @@ GitHub asks them to review changes to their folders.
 5. CI must pass, and the folder owner reviews. The maintainer merges.
 
 `main` is protected: never push to it directly.
+
+## Personal branches for hardware members
+
+Hardware members who are new to Git each have one branch that they keep
+using, instead of creating a branch for every change:
+
+- `hardware/member-a`
+- `hardware/member-b`
+
+The maintainer tells each member which branch is theirs. Only commit to
+your own branch.
+
+### Adding files in the browser
+
+No Git installation is needed.
+
+1. Open the repository on GitHub and choose your branch in the branch menu
+   at the top left (it shows `main` at first).
+2. Open the folder you want to add to, for example `drafts/`,
+   `hardware/cad/<part>/` or `hardware/laser-cut/`. Follow the guide
+   (`README.ja.md` or `README.md`) of that folder.
+3. Choose **Add file** → **Upload files** and drop in your files. To change
+   an existing file, upload a file with the same name; it replaces the old
+   one.
+4. Under **Commit changes**, write a short English message saying what you
+   did, for example "Add chassis base sketch".
+5. Make sure **Commit directly to the `hardware/member-a` branch** (your
+   branch) is selected, then press **Commit changes**.
+
+The browser accepts files up to 25 MB. For larger files, or many files at
+once, use [GitHub Desktop](https://desktop.github.com/): clone the
+repository, pick your branch under **Current Branch**, commit, then press
+**Push origin**.
+
+### Getting your work into `main`
+
+- When a piece of work is ready, open a pull request from your branch to
+  `main`: on your branch, choose **Contribute** → **Open pull request**. The
+  maintainer can also open it for you.
+- After it is merged, keep committing to the same branch. Do not delete it.
+- If the pull request says the branch is out of date, press
+  **Update branch**.
 
 ## Do not commit
 
