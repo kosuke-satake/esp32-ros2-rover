@@ -71,3 +71,7 @@ flowchart TB
 ## ライセンス
 
 [Apache License 2.0](LICENSE)
+
+## AI の利用について
+
+このプロジェクトは [Claude Code](https://claude.com/claude-code) などの AI コーディングアシスタントの助けを借りて開発している．設計の判断はメンテナーが行い，すべての変更はマージ前にメンテナーが確認する．

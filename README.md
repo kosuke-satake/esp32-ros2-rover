@@ -71,3 +71,10 @@ Firmware, ROS 2 packages and hardware files will be added as each stage starts.
 ## License
 
 [Apache License 2.0](LICENSE)
+
+## Use of AI
+
+This project is developed with the help of AI coding assistants such as
+[Claude Code](https://claude.com/claude-code). Design decisions are made by
+the maintainer, and every change is reviewed by the maintainer before it is
+merged.
