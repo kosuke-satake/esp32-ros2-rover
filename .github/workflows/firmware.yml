@@ -4,11 +4,11 @@ on:
   push:
     branches: [main]
     paths:
-      - "firmware/**"
+      - "software/firmware/**"
       - ".github/workflows/firmware.yml"
   pull_request:
     paths:
-      - "firmware/**"
+      - "software/firmware/**"
       - ".github/workflows/firmware.yml"
 
 permissions:
@@ -25,5 +25,5 @@ jobs:
       - name: Install PlatformIO
         run: pip install platformio
       - name: Run host unit tests
-        working-directory: firmware
+        working-directory: software/firmware
         run: pio test -e native

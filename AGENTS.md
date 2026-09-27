@@ -18,7 +18,7 @@ chosen. No ROS 2 code has been written yet.
 
 - `docs/architecture.md`: decisions that are settled, with rationale.
 - `docs/open-questions.md`: decisions that are deliberately still open.
-- `firmware/`: the ESP32 body, a PlatformIO project.
+- `software/firmware/`: the ESP32 body, a PlatformIO project.
 
 Directories such as `ros2/` and `hardware/` are created when real work on them
 starts. Do not add empty directories or placeholder files.
@@ -107,8 +107,8 @@ command timeout, without an explicit decision from the maintainer.
 - Stop the motors when commands stop arriving.
 - Read encoders with interrupts or a hardware pulse counter.
 - Keep hardware-independent logic (kinematics, PID, timeouts, message
-  parsing) in `firmware/lib/` without Arduino dependencies, and cover it with
-  host unit tests in `firmware/test/`.
+  parsing) in `software/firmware/lib/` without Arduino dependencies, and
+  cover it with host unit tests in `software/firmware/test/`.
 - Put Wi-Fi passwords and other secrets in `secrets.h` (ignored by Git).
   Commit only `secrets.example.h`.
 
@@ -153,11 +153,11 @@ Firmware (requires PlatformIO Core, for example through the VS Code
 extension):
 
 ```sh
-cd firmware
+cd software/firmware
 pio test -e native   # host unit tests, no hardware needed
 ```
 
-CI runs the same tests on every pull request that touches `firmware/`.
+CI runs the same tests on every pull request that touches `software/firmware/`.
 Add commands here as they are introduced (building and flashing the ESP32
 once the board is chosen, the ROS 2 workspace in Stage 2).
 

@@ -125,8 +125,8 @@ ESP32 alone, so they do not depend on network latency.
 - Stop the motors when commands stop arriving.
 - Read encoders with interrupts or a hardware pulse counter.
 - Keep hardware-independent logic (kinematics, PID, timeouts, message
-  parsing) free of Arduino dependencies in `firmware/lib/`, so it can be
-  unit-tested on the host with PlatformIO's native environment.
+  parsing) free of Arduino dependencies in `software/firmware/lib/`, so it
+  can be unit-tested on the host with PlatformIO's native environment.
 - Keep Wi-Fi passwords and other secrets in `secrets.h`, which is ignored by
   Git. Commit only `secrets.example.h`.
 

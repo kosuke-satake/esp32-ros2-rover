@@ -64,7 +64,7 @@ Open design questions are tracked in [docs/open-questions.md](docs/open-question
 | --- | --- |
 | [`docs/architecture.md`](docs/architecture.md) | Settled design decisions |
 | [`docs/open-questions.md`](docs/open-questions.md) | Decisions deferred until they are needed |
-| [`firmware/`](firmware) | ESP32 body (PlatformIO, Arduino framework); run `pio test -e native` in it for host unit tests |
+| [`software/firmware/`](software/firmware) | ESP32 body (PlatformIO, Arduino framework); run `pio test -e native` in it for host unit tests |
 | [`AGENTS.md`](AGENTS.md) | Instructions for AI coding agents |
 
 ROS 2 packages and hardware files will be added as their stages start.
