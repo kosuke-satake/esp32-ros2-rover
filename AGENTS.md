@@ -68,6 +68,10 @@ When a layer fails, the layer below it stops the robot.
 - A physical emergency-stop switch cuts motor power. It is the lowest layer.
 - If the ESP32 hangs, its PWM hardware keeps driving the motors, so a hardware
   watchdog must reset it.
+- While the ESP32 resets or boots, its pins float and some pins may output
+  signals. Motor driver inputs must default to stopped in that state (for
+  example with pull-down resistors), so a watchdog reset cannot leave the
+  motors running.
 - If the brain or the link fails, the ESP32 detects missing commands and
   stops.
 - If remote processing (for example on the Mac) fails, the brain detects it

@@ -87,6 +87,11 @@ iPhone can drive it directly, and the brain can be replaced.
 | The brain or the link goes down | The ESP32 detects that commands have stopped arriving and stops the motors. |
 | Remote processing (for example on the Mac) goes down | The brain detects the loss and stops the robot. |
 
+Motor driver inputs must default to stopped while the ESP32 resets or boots.
+During that time its pins float and some pins may output signals, so wire the
+inputs with pull-down resistors or similar; otherwise a watchdog reset could
+leave the motors running.
+
 Fast reactions such as stopping just before an obstacle are handled by the
 ESP32 alone, so they do not depend on network latency.
 
