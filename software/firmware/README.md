@@ -29,7 +29,7 @@ Building and flashing the ESP32 will be added here once the board is chosen.
 | Path | Contents |
 | --- | --- |
 | `platformio.ini` | Build environments. Only `native` (host tests) for now. |
-| `lib/` | Hardware-independent logic: kinematics, PID, command timeout. No Arduino code. |
+| `lib/` | Hardware-independent logic: kinematics, PID, command timeout, message parsing and formatting, line reading. No Arduino code. |
 | `test/` | Unit tests for `lib/`, one folder per module. |
 
 To add a module, create `lib/<name>/<name>.h` and `lib/<name>/<name>.cpp`,

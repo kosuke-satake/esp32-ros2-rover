@@ -101,7 +101,9 @@ command timeout, without an explicit decision from the maintainer.
 ## Communication and power
 
 - Start with a simple, self-made, text-based protocol. Wi-Fi (UDP) is the
-  first choice. The exact message syntax is defined when Stage 1 begins.
+  first choice. The message format is specified in `docs/protocol.md`; keep
+  the firmware and every brain-side implementation in line with it, and
+  change it only as that file describes.
 - Bandwidth is not a concern; camera video never passes through the ESP32.
 - Typical problems are blocking calls (`delay()`, `pulseIn()`), missed
   encoder counts and I2C wiring, not the link itself.

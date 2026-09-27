@@ -4,7 +4,7 @@ A low-cost differential-drive robot with an ESP32 body and a swappable ROS 2 bra
 
 [日本語](README.ja.md)
 
-> **Status: Stage 1 in progress.** The architecture and the brain–body contract are defined. The firmware's control logic (kinematics, PID, command timeout) is written and unit-tested on the host; board-specific code comes once the parts are chosen.
+> **Status: Stage 1 in progress.** The architecture and the brain–body contract are defined. The message format is specified, and the firmware's hardware-independent logic (kinematics, PID, command timeout, message parsing) is written and unit-tested on the host; board-specific code comes once the parts are chosen.
 
 ## Features
 
@@ -55,14 +55,14 @@ Details: [docs/architecture.md](docs/architecture.md).
 | 4 | **Brain on a phone.** Move the brain to an old Android phone. Exploratory; the fallback is the Mac or a Raspberry Pi. | Planned |
 | 5 | **Extensions.** Camera perception (color tracking first, neural networks later), SLAM, and conversation with an LLM. | Planned |
 
-**Current position:** Stage 1 — hardware-independent firmware logic is done; choosing parts and defining the message format are next.
+**Current position:** Stage 1 — the message format and the hardware-independent firmware logic are done; choosing the parts is next.
 Open design questions are tracked in [docs/open-questions.md](docs/open-questions.md).
 
 ## Repository
 
 | Path | Contents |
 | --- | --- |
-| [`docs/`](docs) | Settled design ([architecture](docs/architecture.md)) and [open questions](docs/open-questions.md) |
+| [`docs/`](docs) | Settled design ([architecture](docs/architecture.md), [message protocol](docs/protocol.md)) and [open questions](docs/open-questions.md) |
 | [`drafts/`](drafts) | Sketches and early ideas |
 | [`hardware/`](hardware) | CAD data and laser-cut files; later the parts list |
 | [`software/`](software) | ESP32 firmware (PlatformIO, Arduino framework); later ROS 2 and tools |
