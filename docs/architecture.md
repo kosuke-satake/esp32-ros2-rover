@@ -67,7 +67,7 @@ motors on its own.
 The message format does not depend on the link. While the brain is a Mac the
 link is Wi-Fi (UDP); once a phone rides on the robot it may become USB serial,
 as in OpenBot. The same text message must work unchanged over either link.
-The exact message syntax will be defined when Stage 1 begins.
+The message format is specified in [protocol.md](protocol.md).
 
 **Why.**
 As long as this contract holds, the brain can be swapped between a Mac, a
