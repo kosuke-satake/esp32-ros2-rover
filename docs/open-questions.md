@@ -58,3 +58,10 @@ Needed by: Stage 4 or 5, whichever first uses the camera.
 Specific parts such as the motors, the motor driver and the battery.
 
 Needed by: Stage 1.
+
+## CAD tool
+
+Which CAD tool the hardware team uses. Likely Onshape or SolidWorks,
+possibly Inventor. The rules in `hardware/cad/` work for any of them.
+
+Needed by: Stage 1, before the chassis is designed.
