@@ -34,7 +34,7 @@ flowchart TB
 
 | Role | Device | Responsibilities |
 | --- | --- | --- |
-| Body | ESP32, programmed with the Arduino framework | Motor control (PID), encoders, sensors, battery monitoring, safety stop. Runs on its own without a brain. |
+| Body | ESP32, programmed with the Arduino framework and built with PlatformIO | Motor control (PID), encoders, sensors, battery monitoring, safety stop. Runs on its own without a brain. |
 | Brain | For now a Mac running ROS 2 in Docker. The target is an old Android phone, which already has a camera, screen, IMU, Wi-Fi and enough compute for NN inference at low cost. The Mac may stay in the loop for heavy processing. | Everything above motor control: perception, mapping, planning, interaction. |
 | Controller | iPhone | Remote control, for example tilting the phone to set the speed. An iPhone with LiDAR is also a candidate SLAM sensor. |
 | Development | Mac | Editing, building and flashing the ESP32. The brain is reached over SSH (for example VS Code Remote-SSH). |
@@ -124,6 +124,9 @@ ESP32 alone, so they do not depend on network latency.
   loop waiting for more.
 - Stop the motors when commands stop arriving.
 - Read encoders with interrupts or a hardware pulse counter.
+- Keep hardware-independent logic (kinematics, PID, timeouts, message
+  parsing) free of Arduino dependencies in `firmware/lib/`, so it can be
+  unit-tested on the host with PlatformIO's native environment.
 - Keep Wi-Fi passwords and other secrets in `secrets.h`, which is ignored by
   Git. Commit only `secrets.example.h`.
 
