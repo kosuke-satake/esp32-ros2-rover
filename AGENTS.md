@@ -202,8 +202,10 @@ once the board is chosen, the ROS 2 workspace in Stage 2).
 This repository is public.
 
 - Do not write personal information: people's names, affiliations (such as
-  schools, clubs or employers), budget figures, or the specific models of
-  devices the maintainer owns. Describe devices generically, for example
-  "an old Android phone" or "an iPhone with LiDAR".
+  schools, clubs or employers), or the specific models of the maintainer's
+  personal devices (phone, computer). Describe those devices generically, for
+  example "an old Android phone" or "an iPhone with LiDAR".
+- Budget figures and the robot's parts, with models and prices, may be
+  written, for example in the parts list.
 - Never commit credentials. If you are not sure whether something is a
   secret, stop and ask the maintainer before committing.
