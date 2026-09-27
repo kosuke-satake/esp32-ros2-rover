@@ -120,6 +120,9 @@ command timeout, without an explicit decision from the maintainer.
 
 ## How to make decisions
 
+- Do not push ahead on your own. Confirm with the maintainer before acting,
+  especially on important decisions (design, safety, anything hard to undo).
+  When you are stuck or unsure, ask right away.
 - Decide details only when the current stage needs them. Do not pick
   specific hardware models, OS or ROS 2 versions, middleware, libraries or
   similar details ahead of time. If a task seems to require one, propose
@@ -175,5 +178,5 @@ This repository is public.
   schools, clubs or employers), budget figures, or the specific models of
   devices the maintainer owns. Describe devices generically, for example
   "an old Android phone" or "an iPhone with LiDAR".
-- Keep credentials out of the history entirely. If one is committed by
-  mistake, tell the maintainer; removing it from later commits is not enough.
+- Never commit credentials. If you are not sure whether something is a
+  secret, stop and ask the maintainer before committing.
