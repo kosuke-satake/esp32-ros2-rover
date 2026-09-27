@@ -16,21 +16,34 @@ Stage 1 is in progress. The firmware so far is hardware-independent control
 logic with host unit tests; board-specific code follows once the parts are
 chosen. No ROS 2 code has been written yet.
 
-- `docs/architecture.md`: decisions that are settled, with rationale.
-- `docs/open-questions.md`: decisions that are deliberately still open.
-- `firmware/`: the ESP32 body, a PlatformIO project.
+The project is run as a team. `CONTRIBUTING.md` describes the workflow for
+people; this file adds what AI agents need.
 
-Directories such as `ros2/` and `hardware/` are created when real work on them
-starts. Do not add empty directories or placeholder files.
+## Repository layout
+
+Folders are grouped by team role.
+
+| Path | Contents |
+| --- | --- |
+| `docs/` | Settled design (`architecture.md`) and open questions (`open-questions.md`) |
+| `drafts/` | Sketches and early ideas; not decisions |
+| `hardware/` | CAD data (`cad/`), laser-cut files (`laser-cut/`), later the parts list |
+| `software/` | ESP32 firmware (`firmware/`, a PlatformIO project); later `tools/` and `ros2/` |
+
+- Every working folder has a guide: `README.md` in English and `README.ja.md`
+  in Japanese. Read the guide before working in a folder and follow it. When
+  you change how a folder is used, update both versions.
+- Create new folders (for example `software/ros2/` or `hardware/wiring/`)
+  when their work starts, together with both guides. Do not add empty
+  folders or placeholder files.
 
 ## Architecture
 
 The robot is split into a brain and a body.
 
 - **Body**: an ESP32, programmed with the Arduino framework and built with
-  PlatformIO. It owns motor
-  control (PID), encoders, sensors, battery monitoring and the safety stop.
-  It must run on its own, without a brain.
+  PlatformIO. It owns motor control (PID), encoders, sensors, battery
+  monitoring and the safety stop. It must run on its own, without a brain.
 - **Brain**: for now a Mac running ROS 2 in Docker. The target is an old
   Android phone (camera, screen, IMU, Wi-Fi and NN inference at low cost).
   The Mac may stay in use for heavy processing.
@@ -107,8 +120,8 @@ command timeout, without an explicit decision from the maintainer.
 - Stop the motors when commands stop arriving.
 - Read encoders with interrupts or a hardware pulse counter.
 - Keep hardware-independent logic (kinematics, PID, timeouts, message
-  parsing) in `firmware/lib/` without Arduino dependencies, and cover it with
-  host unit tests in `firmware/test/`.
+  parsing) in `software/firmware/lib/` without Arduino dependencies, and
+  cover it with host unit tests in `software/firmware/test/`.
 - Put Wi-Fi passwords and other secrets in `secrets.h` (ignored by Git).
   Commit only `secrets.example.h`.
 
@@ -153,11 +166,11 @@ Firmware (requires PlatformIO Core, for example through the VS Code
 extension):
 
 ```sh
-cd firmware
+cd software/firmware
 pio test -e native   # host unit tests, no hardware needed
 ```
 
-CI runs the same tests on every pull request that touches `firmware/`.
+CI runs the same tests on every pull request.
 Add commands here as they are introduced (building and flashing the ESP32
 once the board is chosen, the ROS 2 workspace in Stage 2).
 
@@ -166,7 +179,8 @@ once the board is chosen, the ROS 2 workspace in Stage 2).
 - Everything committed to this repository is in English: code, comments,
   README, this file, docs, commit messages and pull request descriptions.
 - The only exception is `*.ja.md` files, which are Japanese versions of
-  documents (for example `README.ja.md`).
+  documents (for example `README.ja.md`). Folder guides (`README.md`) and
+  `CONTRIBUTING.md` always have one.
 - When you change a document that has a `*.ja.md` counterpart, update both in
   the same change, following the wording and conventions already used in
   each file.
@@ -188,8 +202,10 @@ once the board is chosen, the ROS 2 workspace in Stage 2).
 This repository is public.
 
 - Do not write personal information: people's names, affiliations (such as
-  schools, clubs or employers), budget figures, or the specific models of
-  devices the maintainer owns. Describe devices generically, for example
-  "an old Android phone" or "an iPhone with LiDAR".
+  schools, clubs or employers), or the specific models of the maintainer's
+  personal devices (phone, computer). Describe those devices generically, for
+  example "an old Android phone" or "an iPhone with LiDAR".
+- Budget figures and the robot's parts, with models and prices, may be
+  written, for example in the parts list.
 - Never commit credentials. If you are not sure whether something is a
   secret, stop and ask the maintainer before committing.

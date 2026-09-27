@@ -1,0 +1,9 @@
+# Folder owners. GitHub asks them to review pull requests that change their
+# folders. When team members join, replace or add their GitHub usernames on
+# the line of their folder. Later lines take precedence over earlier ones.
+
+*            @kosuke-satake
+/hardware/   @kosuke-satake
+/software/   @kosuke-satake
+/drafts/     @kosuke-satake
+/docs/       @kosuke-satake

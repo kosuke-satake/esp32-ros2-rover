@@ -62,12 +62,14 @@ flowchart TB
 
 | パス | 内容 |
 | --- | --- |
-| [`docs/architecture.md`](docs/architecture.md) | 決定済みの設計 |
-| [`docs/open-questions.md`](docs/open-questions.md) | 必要になるまで決めない事項 |
-| [`firmware/`](firmware) | ESP32 の身体（PlatformIO，Arduino）．中で `pio test -e native` を実行すると PC 上で単体テストが動く |
+| [`docs/`](docs) | 決定済みの設計（[architecture](docs/architecture.md)）と[未確定事項](docs/open-questions.md)（英語） |
+| [`drafts/`](drafts) | スケッチや思いつき |
+| [`hardware/`](hardware) | CAD データとレーザーカット用データ．後に部品表 |
+| [`software/`](software) | ESP32 のファームウェア（PlatformIO，Arduino）．後に ROS 2 とツール |
+| [`CONTRIBUTING.ja.md`](CONTRIBUTING.ja.md) | チームのメンバーとして作業する方法 |
 | [`AGENTS.md`](AGENTS.md) | AI コーディングエージェント向けの指示 |
 
-ROS 2 パッケージとハードウェアのファイルは，それぞれの段階の開始時に追加する．
+各フォルダに英語（`README.md`）と日本語（`README.ja.md`）の説明書がある．
 
 ## ライセンス
 

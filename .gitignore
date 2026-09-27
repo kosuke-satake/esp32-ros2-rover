@@ -12,6 +12,11 @@ secrets.h
 # Local tool metadata
 .label.toml
 
+# CAD lock and backup files (SolidWorks, Inventor)
+~$*
+*.lck
+OldVersions/
+
 # PlatformIO
 .pio/
 .vscode/.browse.c_cpp.db*

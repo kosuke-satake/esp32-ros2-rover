@@ -62,12 +62,15 @@ Open design questions are tracked in [docs/open-questions.md](docs/open-question
 
 | Path | Contents |
 | --- | --- |
-| [`docs/architecture.md`](docs/architecture.md) | Settled design decisions |
-| [`docs/open-questions.md`](docs/open-questions.md) | Decisions deferred until they are needed |
-| [`firmware/`](firmware) | ESP32 body (PlatformIO, Arduino framework); run `pio test -e native` in it for host unit tests |
+| [`docs/`](docs) | Settled design ([architecture](docs/architecture.md)) and [open questions](docs/open-questions.md) |
+| [`drafts/`](drafts) | Sketches and early ideas |
+| [`hardware/`](hardware) | CAD data and laser-cut files; later the parts list |
+| [`software/`](software) | ESP32 firmware (PlatformIO, Arduino framework); later ROS 2 and tools |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to work on this repository as a team member |
 | [`AGENTS.md`](AGENTS.md) | Instructions for AI coding agents |
 
-ROS 2 packages and hardware files will be added as their stages start.
+Each folder has its own guide in English (`README.md`) and Japanese
+(`README.ja.md`).
 
 ## License
 
