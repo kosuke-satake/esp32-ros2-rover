@@ -57,13 +57,11 @@ personal branch instead; see the next section.
 ## Personal branches for hardware members
 
 Hardware members who are new to Git each have one branch that they keep
-using, instead of creating a branch for every change:
+using, instead of creating a branch for every change. It is named
+`hardware/<your GitHub username>`.
 
-- `hardware/member-a`
-- `hardware/member-b`
-
-The maintainer tells each member which branch is theirs. Only commit to
-your own branch.
+The maintainer creates the branch when a member joins. Only commit to your
+own branch.
 
 ### Adding files in the browser
 
@@ -79,8 +77,8 @@ No Git installation is needed.
    one.
 4. Under **Commit changes**, write a short English message saying what you
    did, for example "Add chassis base sketch".
-5. Make sure **Commit directly to the `hardware/member-a` branch** (your
-   branch) is selected, then press **Commit changes**.
+5. Make sure **Commit directly to the `hardware/<your-username>` branch**
+   (your branch) is selected, then press **Commit changes**.
 
 The browser accepts files up to 25 MB. For larger files, or many files at
 once, use [GitHub Desktop](https://desktop.github.com/): clone the
