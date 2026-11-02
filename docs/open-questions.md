@@ -4,6 +4,14 @@ Decisions that are deliberately left open. Each one is settled when the stage
 that needs it begins, not earlier. Once decided, move the result into
 [architecture.md](architecture.md) and remove it from this list.
 
+## Brain hardware
+
+Which brain to use: a Raspberry Pi (Model 4B is the tentative candidate), a
+Mac running ROS 2 in Docker, or an old Android phone. The ESP32-only Stage 1
+does not need one.
+
+Needed by: Stage 2.
+
 ## Phone for the brain
 
 Which old Android phone to use as the brain.
@@ -55,9 +63,27 @@ Needed by: Stage 4 or 5, whichever first uses the camera.
 
 ## Parts
 
-Specific parts such as the motors, the motor driver and the battery.
+The main parts of the ESP32-only prototype are chosen and listed in
+`hardware/parts.md`. Still open: the exact ESP32-S3 board, the battery and the
+emergency-stop switch. Parts for Stage 2 (possibly another chassis and other
+sensors) are decided when that stage starts.
 
-Needed by: Stage 1.
+Needed by: Stage 1 for the open items.
+
+## Odometry without encoders
+
+The Stage 1 prototype has no encoders. Whether to add encoders or to get
+odometry another way is decided when the ROS 2 stage starts.
+
+Needed by: Stage 2.
+
+## Browser remote control
+
+How the browser page talks to the ESP32 (plain HTTP requests or a WebSocket),
+which library serves the page, and whether the ESP32 keeps its own Wi-Fi
+network or joins an existing one.
+
+Needed by: Stage 1, step 2.
 
 ## CAD tool
 

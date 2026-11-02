@@ -97,8 +97,9 @@ ESP32 alone, so they do not depend on network latency.
 
 ## Communication
 
-- Start with a simple, self-made, text-based protocol. Wi-Fi (UDP) is the
-  first choice.
+- Start with a simple, self-made, text-based protocol. For the link to a brain
+  (Stage 2), Wi-Fi (UDP) is the first choice and USB serial the alternative.
+  Stage 1 has no brain: a browser connects directly to the ESP32.
 - Bandwidth is not a concern. Camera video never passes through the ESP32.
 - The usual bottlenecks are not the link itself but:
   - the main loop being blocked by `delay()` or `pulseIn()`,
@@ -132,10 +133,21 @@ ESP32 alone, so they do not depend on network latency.
 
 ## Staged plan
 
-1. **ESP32-only RC car.** Laser-cut chassis, two motors with encoders, driven
-   from the Mac.
-2. **ROS 2 on the Mac.** Send velocity commands from ROS 2 and receive motion
-   data back.
+1. **ESP32-only robot.** Laser-cut chassis, two geared DC motors, an L298N
+   motor driver and an HC-SR04 ultrasonic sensor, with no brain. The motors
+   have no encoders yet, so they run open loop, without speed feedback. The
+   stage has three steps:
+   1. Drive the motors from plain firmware.
+   2. Steer from a browser on a phone or computer, through a Wi-Fi network that
+      the ESP32 creates itself.
+   3. Stop or steer around obstacles using the ultrasonic sensor. This runs on
+      the ESP32 alone, as the safety rules require.
+
+   The hardware of this stage is a prototype. It may be rebuilt, chassis and
+   sensors included, when the ROS 2 stage starts.
+2. **ROS 2 brain.** A brain (a Raspberry Pi or a Mac; see
+   [open-questions.md](open-questions.md)) sends velocity commands from ROS 2
+   and receives motion data back.
 3. **iPhone controller.** Drive the robot from an iPhone.
 4. **Brain on a phone.** Move the brain to an old Android phone. Running ROS 2
    on Android is not a well-trodden path (OpenBot itself uses its own app, not
