@@ -31,3 +31,7 @@ prefers it.
   for it; say in the pull request whether the design compensates.
 - When you find settings that cut a material cleanly, add them to this file
   as a table: material, thickness, machine, power, speed and passes.
+
+## Imported prototype
+
+Imported profiles use the matching CAD part names and nominal 3 mm plywood suffix. laser-layout-plywood-3mm.dxf contains the combined 300 x320 layout. All paths are uncompensated; cut the kerf coupon first. Material and machine approval plus component measurements are required. See [build notes](../prototype-build.md).

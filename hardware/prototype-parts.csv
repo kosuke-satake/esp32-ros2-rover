@@ -1,0 +1,50 @@
+category,item,quantity,nominal-specification,status
+laser,chassis-base,1,180x140x3 plywood,prototype measured fit required
+laser,chassis-top,1,180x140x3 plywood,prototype measured fit required
+laser,esp-carrier,1,72x52x3 plywood,prototype
+laser,servo-horn-plate,1,50x56x3 plywood,measure horn
+laser,sensor-face,1,50x30 plus tabs in 3 mm plywood,measure sensor
+laser,caster-spacer,0-7,3 mm layers replacing part of caster riser,optional
+laser,kerf-coupon,1,same sheet and laser settings,cut before final parts
+drive,TT geared motor,2,earlier 200 RPM 3-6 V non-encoder candidate,encoder requirement unresolved
+drive,drive wheel,2,65 diameter and26 rim width,stock or printed alternative
+drive,ball caster,1,25 overall mounting height and24x24 hole pitch assumed,measure
+control,ESP32-S3 board,1,64x28 PCB assumed,exact variant unresolved
+control,TB6612FNG breakout,1,22x20x8 envelope assumed,current and selection unresolved
+sensor,HC-SR04,1,45x20 PCB and26 can pitch assumed,candidate
+sensor,SG90 servo with horn and retaining screw,1,body23x12.2x22.8 assumed,measure exact servo
+power,4AA holder and cells,1 holder plus4 cells,60x58x19 holder assumed,not settled project battery
+power,5 V buck-boost converter,1,earlier target >=2 A continuous with verified peaks,resolve against project power architecture
+power,power switch,1,8.4x15.4 pilot only,not equivalent to emergency stop
+power,battery fuse and holder,1 set,select from current and wire ratings,rating unresolved
+safety,motor-power emergency stop,1,accessible physical motor power interruption,required by architecture not modeled
+safety,hardware watchdog,1 arrangement,reset stalled ESP safely,required by architecture not modeled
+safety,driver stopped-default circuitry,1 set,pull-downs or equivalent on selected driver,required by architecture not verified
+safety,battery monitoring circuit,1 arrangement,match chosen battery and ESP input,required integration unresolved
+feedback,motor encoders,2 channels or assemblies,select with motors and required resolution,required by architecture not modeled
+electronics,10k and15k 1 percent resistors,1 each,ultrasonic Echo divider candidate,verify board limits
+electronics,10k resistor,1,standby pull-down candidate,verify selected driver
+electronics,74AHCT125 or suitable buffer,0-1,optional one-way3.3 to5 V control,only if actual input thresholds require
+electronics,100 nF capacitors,4-6,motor suppression and local bypass,follow selected circuit
+electronics,470-1000 uF capacitor,1,servo rail starting value,verify regulator stability and voltage rating
+hardware,M3 30 mm female-female standoff,4,between decks,nominal
+hardware,M3 deck screws,8,about M3x8 with washers,verify actual engagement
+hardware,M3 6 mm spacer,2,ESP carrier,nominal
+hardware,M3 carrier screw and locknut,2 sets,about M3x20 through stack,verify length
+hardware,M3 caster riser,4,46 minus measured caster height;21 assumed,measure
+hardware,M3 caster screw and locknut,4 sets,about M3x35 for assumed stack,verify length
+hardware,M3 broad washers,24-32,against plywood slots,avoid crushing
+hardware,servo ear screws and washers,2 sets,matching supplied hardware or M2,measure actual ears
+hardware,M2 10 mm horn spacer,2,horn to sensor plate,measure horn elevation
+hardware,M2 horn screws nuts washers,2 sets,about M2x20,verify stack and engagement
+print,tt-motor-saddle,4,two per motor,optional alternative to ties or commercial brackets
+hardware,M3 heat-set insert,8,about5 long and matched pilot,only for printed saddles
+hardware,M3 saddle screws and washers,8 sets,about M3x8 after checking stack,only for printed saddles
+print,insert-fit-coupon,1,test actual saddle inserts,print before saddle set
+print,spoked-wheel,2,65 diameter keyed push fit,optional alternative to stock wheels
+print,axle-fit coupon,3 variants,choose snug fit then regenerate matching wheel if needed,test before wheels
+hardware,motor top packing,2 pieces,3.5 total assumed including thin rubber,measure actual motor and axle height
+hardware,insulating pads clips nylon standoffs,1 set,4 mm driver and5 mm ESP supports assumed,match actual boards
+consumables,small cable ties,12-18,2.5 mm motor ties,keep clear of rotating parts
+consumables,wood glue and optional gearbox stop blocks,1 set,square glued sensor tabs and motor anti-slip stops,fit before gluing
+consumables,wire connectors heatshrink sleeving solder,1 set,current-rated wiring and strain relief,ratings from measured loads

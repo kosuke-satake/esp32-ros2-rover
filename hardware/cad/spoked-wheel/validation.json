@@ -1,0 +1,99 @@
+{
+  "units": "mm",
+  "wheel_OD": 65.0,
+  "rim_width": 26.0,
+  "hub_overall_length": 40.0,
+  "hub_inboard_projection": 14,
+  "window_count": 6,
+  "print_quantity": 2,
+  "nominal_shaft": [
+    5.4,
+    3.6
+  ],
+  "bore": [
+    5.550000000000001,
+    3.75
+  ],
+  "fit_coupons": [
+    {
+      "file": "axle_fit_tight.stl",
+      "major_diameter": 5.4,
+      "across_flats": 3.6
+    },
+    {
+      "file": "axle_fit_nominal.stl",
+      "major_diameter": 5.550000000000001,
+      "across_flats": 3.75
+    },
+    {
+      "file": "axle_fit_loose.stl",
+      "major_diameter": 5.7,
+      "across_flats": 3.9
+    }
+  ],
+  "fit_status": "Nominal double-flat shaft; measure and test actual motor",
+  "checks": {
+    "-1_lower_deck": {
+      "overlap_mm3": 0.0,
+      "minimum_distance_mm": 4.61
+    },
+    "-1_upper_deck": {
+      "overlap_mm3": 0.0,
+      "minimum_distance_mm": 15.652
+    },
+    "-1_shaft": {
+      "overlap_mm3": 0.0,
+      "minimum_distance_mm": 0.075
+    },
+    "-1_saddle_-56": {
+      "overlap_mm3": 0.0,
+      "minimum_distance_mm": 1.5
+    },
+    "-1_saddle_-10": {
+      "overlap_mm3": 0.0,
+      "minimum_distance_mm": 8.0
+    },
+    "1_lower_deck": {
+      "overlap_mm3": 0.0,
+      "minimum_distance_mm": 4.61
+    },
+    "1_upper_deck": {
+      "overlap_mm3": 0.0,
+      "minimum_distance_mm": 15.652
+    },
+    "1_shaft": {
+      "overlap_mm3": 0.0,
+      "minimum_distance_mm": 0.075
+    },
+    "1_saddle_-56": {
+      "overlap_mm3": 0.0,
+      "minimum_distance_mm": 1.5
+    },
+    "1_saddle_-10": {
+      "overlap_mm3": 0.0,
+      "minimum_distance_mm": 8.0
+    }
+  },
+  "rim_to_deck_lateral_gap_mm": 7.0,
+  "hub_envelope_vertical_gap_mm": 3.5,
+  "shaft_engagement_nominal_mm": 8.0,
+  "rear_printed_saddle_X_mm": -56,
+  "stl_checks": {
+    "axle_fit_loose.stl": {
+      "boundary_or_nonmanifold_edges": 0,
+      "triangles": 944
+    },
+    "axle_fit_nominal.stl": {
+      "boundary_or_nonmanifold_edges": 0,
+      "triangles": 944
+    },
+    "axle_fit_tight.stl": {
+      "boundary_or_nonmanifold_edges": 0,
+      "triangles": 936
+    },
+    "wheel_65mm_6spoke_PRINT_2.stl": {
+      "boundary_or_nonmanifold_edges": 0,
+      "triangles": 7932
+    }
+  }
+}

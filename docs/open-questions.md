@@ -59,6 +59,15 @@ Specific parts such as the motors, the motor driver and the battery.
 
 Needed by: Stage 1.
 
+The earlier [mechanical prototype](../hardware/prototype-build.md) and
+[candidate parts list](../hardware/prototype-parts.csv) are now available for
+review. They do not settle the parts decision: the original TT motors lack
+encoders, the actual board and mounting dimensions need measurement, and
+the battery/converter, driver current budget, emergency stop, hardware
+watchdog and battery-monitoring integration need review against the settled
+architecture. Printed wheels and motor saddles are optional alternatives;
+verify their fit together before adoption.
+
 ## CAD tool
 
 Which CAD tool the hardware team uses. Likely Onshape or SolidWorks,
