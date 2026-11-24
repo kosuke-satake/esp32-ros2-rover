@@ -47,3 +47,7 @@ cad/
   updating the assemblies that use them.
 - Lock and backup files that CAD tools create (`~$*`, `*.lck`,
   `OldVersions/`) are ignored by Git.
+
+## Imported prototype
+
+Imported prototype entries: robot-assembly, chassis-base, chassis-top, esp-carrier, servo-horn-plate, sensor-face, caster-spacer, kerf-coupon, laser-layout, reference-components, tt-motor-saddle and spoked-wheel. Each has a guide. See [build notes](../prototype-build.md).

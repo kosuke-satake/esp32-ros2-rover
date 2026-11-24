@@ -1,0 +1,68 @@
+{
+  "units": "mm",
+  "thickness": 3.0,
+  "parts": 44,
+  "solid_validity": true,
+  "dxf_audit": {
+    "01_lower_deck.dxf": {
+      "errors": 0,
+      "fixes": 0,
+      "entities": 22
+    },
+    "02_upper_deck.dxf": {
+      "errors": 0,
+      "fixes": 0,
+      "entities": 20
+    },
+    "03_esp_carrier.dxf": {
+      "errors": 0,
+      "fixes": 0,
+      "entities": 5
+    },
+    "04_servo_horn_plate.dxf": {
+      "errors": 0,
+      "fixes": 0,
+      "entities": 6
+    },
+    "05_sensor_face.dxf": {
+      "errors": 0,
+      "fixes": 0,
+      "entities": 5
+    },
+    "06_caster_spacer.dxf": {
+      "errors": 0,
+      "fixes": 0,
+      "entities": 5
+    },
+    "07_kerf_coupon.dxf": {
+      "errors": 0,
+      "fixes": 0,
+      "entities": 6
+    },
+    "ALL_PARTS_300x320_nominal.dxf": {
+      "errors": 0,
+      "fixes": 0,
+      "entities": 69
+    }
+  },
+  "wood_intersections_mm3": {},
+  "critical_clearances_mm": {
+    "wheel_to_deck_lateral": 7,
+    "battery_to_upper_underside": 11,
+    "motor_to_lower_underside": 3.5,
+    "caster_riser_nominal": 21,
+    "deck_gap": 30
+  },
+  "step_roundtrip_solids": 44,
+  "wood_reference_intersections_mm3": {},
+  "motor_strap_to_axle_clearance_mm": {
+    "motor_strap_-1_-55_route_reference / axle_-1_reference": 6.05,
+    "motor_strap_-1_-55_route_reference / axle_1_reference": 96.44,
+    "motor_strap_-1_-10_route_reference / axle_-1_reference": 31.05,
+    "motor_strap_-1_-10_route_reference / axle_1_reference": 101.134,
+    "motor_strap_1_-55_route_reference / axle_-1_reference": 96.44,
+    "motor_strap_1_-55_route_reference / axle_1_reference": 6.05,
+    "motor_strap_1_-10_route_reference / axle_-1_reference": 101.134,
+    "motor_strap_1_-10_route_reference / axle_1_reference": 31.05
+  }
+}

@@ -39,3 +39,7 @@ starts.
 4. After review, the pull request is merged into `main`.
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) for the full workflow.
+
+## Imported prototype
+
+[Prototype build notes](prototype-build.md) describe the earlier nominal chassis, mounting, bill of materials and unresolved integration items. [3D print files](3d-print/) include motor saddles, spoked wheels and fit tests. [Import map](import-map.csv) traces the renamed files to the source exports. These candidates do not settle the Stage 1 parts list or replace the encoder and safety requirements.
