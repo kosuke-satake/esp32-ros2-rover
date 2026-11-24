@@ -3,7 +3,7 @@
 # the line of their folder. Later lines take precedence over earlier ones.
 
 *            @kosuke-satake
-/hardware/   @kosuke-satake
+/hardware/   @kosuke-satake @theoorui
 /software/   @kosuke-satake
-/drafts/     @kosuke-satake
+/drafts/     @kosuke-satake @theoorui
 /docs/       @kosuke-satake

@@ -47,12 +47,9 @@
 
 ## ハードウェア担当の個人ブランチ
 
-Git に慣れていないハードウェア担当は，変更ごとにブランチを作らず，自分用のブランチを1つずっと使う．
+Git に慣れていないハードウェア担当は，変更ごとにブランチを作らず，自分用のブランチを1つずっと使う．名前は `hardware/<自分の GitHub ユーザー名>` とする．
 
-- `hardware/member-a`
-- `hardware/member-b`
-
-どちらが自分のブランチかはメンテナーが伝える．自分のブランチにだけコミットする．
+ブランチはメンバーが参加したときにメンテナーが作る．自分のブランチにだけコミットする．
 
 ### ブラウザでファイルを追加する
 
@@ -62,7 +59,7 @@ Git のインストールは不要．
 2. 追加したいフォルダを開く（例：`drafts/`，`hardware/cad/<部品名>/`，`hardware/laser-cut/`）．そのフォルダの説明書（`README.ja.md`）に従う．
 3. **Add file** → **Upload files** を選び，ファイルをドロップする．既存のファイルを変えるときは，同じ名前のファイルをアップロードすると置き換わる．
 4. **Commit changes** の欄に，何をしたかを短い英語で書く（例："Add chassis base sketch"）．
-5. **Commit directly to the `hardware/member-a` branch**（自分のブランチ）が選ばれていることを確かめて，**Commit changes** を押す．
+5. **Commit directly to the `hardware/<自分のユーザー名>` branch**（自分のブランチ）が選ばれていることを確かめて，**Commit changes** を押す．
 
 ブラウザでアップロードできるのは 25 MB までのファイル．それより大きいファイルや，たくさんのファイルをまとめて扱うときは [GitHub Desktop](https://desktop.github.com/) を使う．リポジトリをクローンし，**Current Branch** で自分のブランチを選び，コミットしてから **Push origin** を押す．
 
