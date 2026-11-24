@@ -10,7 +10,7 @@ Mechanical design and parts of the robot.
 | --- | --- |
 | [`cad/`](cad) | CAD data and STEP exports for each part and assembly |
 | [`laser-cut/`](laser-cut) | Cutting files for the laser cutter |
-| `parts.md` | Parts list: name, model, quantity, where to buy and price. Added once the parts are chosen. |
+| [`parts.md`](parts.md) | Parts list: name, model, quantity and notes. Where to buy and the price are added as parts are bought. |
 
 Folders for wiring diagrams and 3D-printed parts are added when that work
 starts.

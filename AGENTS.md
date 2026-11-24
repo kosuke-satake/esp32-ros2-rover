@@ -12,9 +12,10 @@ robot, built up in stages. The long-term goals are ROS 2, camera-based
 perception with neural networks, SLAM with LiDAR or similar sensors,
 autonomous driving, and natural-language interaction through an LLM.
 
-Stage 1 is in progress. The firmware so far is hardware-independent control
-logic with host unit tests; board-specific code follows once the parts are
-chosen. No ROS 2 code has been written yet.
+Stage 1 is in progress: an ESP32-only prototype whose parts are listed in
+`hardware/parts.md`. The firmware so far is hardware-independent control logic
+with host unit tests; board-specific code comes next. No ROS 2 code has been
+written yet.
 
 The project is run as a team. `CONTRIBUTING.md` describes the workflow for
 people; this file adds what AI agents need.
@@ -27,7 +28,7 @@ Folders are grouped by team role.
 | --- | --- |
 | `docs/` | Settled design (`architecture.md`) and open questions (`open-questions.md`) |
 | `drafts/` | Sketches and early ideas; not decisions |
-| `hardware/` | CAD data (`cad/`), laser-cut files (`laser-cut/`), later the parts list |
+| `hardware/` | CAD data (`cad/`), laser-cut files (`laser-cut/`), the parts list (`parts.md`) |
 | `software/` | ESP32 firmware (`firmware/`, a PlatformIO project); later `tools/` and `ros2/` |
 
 - Every working folder has a guide: `README.md` in English and `README.ja.md`
@@ -100,8 +101,9 @@ command timeout, without an explicit decision from the maintainer.
 
 ## Communication and power
 
-- Start with a simple, self-made, text-based protocol. Wi-Fi (UDP) is the
-  first choice. The message format is specified in `docs/protocol.md`; keep
+- Start with a simple, self-made, text-based protocol. For the link to a brain
+  (Stage 2), Wi-Fi (UDP) is the first choice and USB serial the alternative;
+  Stage 1 has no brain. The message format is specified in `docs/protocol.md`; keep
   the firmware and every brain-side implementation in line with it, and
   change it only as that file describes.
 - Bandwidth is not a concern; camera video never passes through the ESP32.
@@ -129,9 +131,13 @@ command timeout, without an explicit decision from the maintainer.
 
 ## Stages
 
-1. ESP32-only RC car: laser-cut chassis, two motors with encoders, driven from
-   the Mac.
-2. ROS 2 on the Mac sends velocity commands and receives motion data.
+1. ESP32-only robot: laser-cut chassis, two geared motors (no encoders yet), an
+   L298N motor driver and an ultrasonic sensor. Steps: drive from plain
+   firmware, steer from a browser through the Wi-Fi network the ESP32 creates,
+   then avoid obstacles. It is a prototype; the hardware may be rebuilt for
+   Stage 2.
+2. ROS 2 brain (a Raspberry Pi or a Mac, undecided) sends velocity commands and
+   receives motion data.
 3. iPhone controller.
 4. Move the brain to an old Android phone. This is exploratory: ROS 2 on
    Android is not a well-trodden path. If it stalls, keep the Mac or switch

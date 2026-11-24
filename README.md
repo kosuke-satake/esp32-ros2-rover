@@ -4,7 +4,7 @@ A low-cost differential-drive robot with an ESP32 body and a swappable ROS 2 bra
 
 [日本語](README.ja.md)
 
-> **Status: Stage 1 in progress.** The architecture and the brain–body contract are defined. The message format is specified, and the firmware's hardware-independent logic (kinematics, PID, command timeout, message parsing) is written and unit-tested on the host; board-specific code comes once the parts are chosen.
+> **Status: Stage 1 in progress.** The architecture, the brain–body contract and the message format are defined. The main parts of the ESP32-only prototype are chosen (see [hardware/parts.md](hardware/parts.md)). The firmware's hardware-independent logic is written and unit-tested on the host; board-specific code comes next.
 
 ## Features
 
@@ -49,13 +49,13 @@ Details: [docs/architecture.md](docs/architecture.md).
 
 | Stage | Goal | Status |
 | --- | --- | --- |
-| 1 | **ESP32-only RC car.** Laser-cut chassis, two motors with encoders, driven from a Mac. | **In progress** |
-| 2 | **ROS 2 on the Mac.** Send velocity commands from ROS 2 and receive odometry. | Planned |
+| 1 | **ESP32-only robot.** Laser-cut chassis, two geared motors, a motor driver and an ultrasonic sensor, with no brain. First plain firmware drives it, then a phone or computer browser steers it through the Wi-Fi network the ESP32 creates, then it avoids obstacles on its own. | **In progress** |
+| 2 | **ROS 2 brain.** A Raspberry Pi or a Mac sends velocity commands from ROS 2 and receives odometry. The hardware may be rebuilt for this stage. | Planned |
 | 3 | **iPhone controller.** Drive the robot from an iPhone. | Planned |
 | 4 | **Brain on a phone.** Move the brain to an old Android phone. Exploratory; the fallback is the Mac or a Raspberry Pi. | Planned |
 | 5 | **Extensions.** Camera perception (color tracking first, neural networks later), SLAM, and conversation with an LLM. | Planned |
 
-**Current position:** Stage 1 — the message format and the hardware-independent firmware logic are done; choosing the parts is next.
+**Current position:** Stage 1 — the message format, the parts of the ESP32-only prototype and the hardware-independent firmware logic are in place; board-specific firmware is next.
 Open design questions are tracked in [docs/open-questions.md](docs/open-questions.md).
 
 ## Repository
@@ -64,7 +64,7 @@ Open design questions are tracked in [docs/open-questions.md](docs/open-question
 | --- | --- |
 | [`docs/`](docs) | Settled design ([architecture](docs/architecture.md), [message protocol](docs/protocol.md)) and [open questions](docs/open-questions.md) |
 | [`drafts/`](drafts) | Sketches and early ideas |
-| [`hardware/`](hardware) | CAD data and laser-cut files; later the parts list |
+| [`hardware/`](hardware) | CAD data, laser-cut files and the parts list |
 | [`software/`](software) | ESP32 firmware (PlatformIO, Arduino framework); later ROS 2 and tools |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to work on this repository as a team member |
 | [`AGENTS.md`](AGENTS.md) | Instructions for AI coding agents |
